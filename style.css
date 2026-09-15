@@ -4,24 +4,59 @@
     box-sizing: border-box;
 }
 
+/* Starry background */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    background: #000000;
     color: #fff;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Create starfield effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, white, rgba(255, 255, 255, 0.2)),
+        radial-gradient(2px 2px at 60px 70px, white, rgba(255, 255, 255, 0.2)),
+        radial-gradient(1px 1px at 50px 50px, white, rgba(255, 255, 255, 0.2)),
+        radial-gradient(1px 1px at 130px 80px, white, rgba(255, 255, 255, 0.2)),
+        radial-gradient(2px 2px at 90px 10px, white, rgba(255, 255, 255, 0.2));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 header {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     padding: 40px 20px;
     text-align: center;
     border-bottom: 2px solid #00d4ff;
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px #00d4ff;
+    text-shadow: 0 0 20px #00d4ff, 0 0 40px #0099ff;
 }
 
 header p {
@@ -34,8 +69,10 @@ nav {
     justify-content: center;
     gap: 15px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .nav-btn {
@@ -58,6 +95,8 @@ main {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .content-section {
@@ -83,7 +122,7 @@ main {
     margin-bottom: 30px;
     text-align: center;
     color: #00d4ff;
-    text-shadow: 0 0 10px #00d4ff;
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #0099ff;
 }
 
 .card-container {
@@ -94,8 +133,8 @@ main {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #00d4ff;
+    background: rgba(0, 20, 40, 0.7);
+    border: 2px solid #00d4ff;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -105,9 +144,10 @@ main {
 }
 
 .card:hover {
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(0, 50, 100, 0.8);
     transform: translateY(-10px);
-    box-shadow: 0 0 20px #00d4ff;
+    box-shadow: 0 0 30px #00d4ff, 0 0 60px rgba(0, 212, 255, 0.4);
+    border-color: #00ffff;
 }
 
 .card h3 {
@@ -121,19 +161,21 @@ main {
 }
 
 .details-box {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 20, 40, 0.9);
     border: 2px solid #00d4ff;
     border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
     line-height: 1.6;
     font-size: 1.1em;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 .details-box h3 {
-    color: #00d4ff;
+    color: #00ffff;
     margin-bottom: 15px;
     font-size: 1.8em;
+    text-shadow: 0 0 10px #00d4ff;
 }
 
 .details-box p {
@@ -141,12 +183,14 @@ main {
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
     text-align: center;
     padding: 20px;
     margin-top: 50px;
     border-top: 1px solid #00d4ff;
     color: #a0a0a0;
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
