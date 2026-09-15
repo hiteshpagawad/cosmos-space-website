@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos & Space Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌌 Cosmos & Space Explorer</h1>
+        <p>Discover the Wonders of the Universe</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn" onclick="showSection('planets')">Planets</button>
+        <button class="nav-btn" onclick="showSection('stars')">Stars</button>
+        <button class="nav-btn" onclick="showSection('galaxies')">Galaxies</button>
+    </nav>
+
+    <main>
+        <!-- Planets Section -->
+        <section id="planets" class="content-section active">
+            <h2>🪐 Planets</h2>
+            <div class="card-container">
+                <div class="card" onclick="showDetails('mercury')">
+                    <h3>Mercury</h3>
+                    <p class="emoji">☄️</p>
+                </div>
+                <div class="card" onclick="showDetails('venus')">
+                    <h3>Venus</h3>
+                    <p class="emoji">🔥</p>
+                </div>
+                <div class="card" onclick="showDetails('earth')">
+                    <h3>Earth</h3>
+                    <p class="emoji">🌍</p>
+                </div>
+                <div class="card" onclick="showDetails('mars')">
+                    <h3>Mars</h3>
+                    <p class="emoji">🔴</p>
+                </div>
+            </div>
+            <div id="details" class="details-box"></div>
+        </section>
+
+        <!-- Stars Section -->
+        <section id="stars" class="content-section">
+            <h2>⭐ Stars</h2>
+            <div class="card-container">
+                <div class="card" onclick="showDetails('sirius')">
+                    <h3>Sirius</h3>
+                    <p class="emoji">✨</p>
+                </div>
+                <div class="card" onclick="showDetails('polaris')">
+                    <h3>Polaris</h3>
+                    <p class="emoji">🧭</p>
+                </div>
+                <div class="card" onclick="showDetails('betelgeuse')">
+                    <h3>Betelgeuse</h3>
+                    <p class="emoji">🌟</p>
+                </div>
+            </div>
+            <div id="star-details" class="details-box"></div>
+        </section>
+
+        <!-- Galaxies Section -->
+        <section id="galaxies" class="content-section">
+            <h2>🌀 Galaxies</h2>
+            <div class="card-container">
+                <div class="card" onclick="showDetails('milkyway')">
+                    <h3>Milky Way</h3>
+                    <p class="emoji">🌌</p>
+                </div>
+                <div class="card" onclick="showDetails('andromeda')">
+                    <h3>Andromeda</h3>
+                    <p class="emoji">🌌</p>
+                </div>
+                <div class="card" onclick="showDetails('whirlpool')">
+                    <h3>Whirlpool</h3>
+                    <p class="emoji">🌪️</p>
+                </div>
+            </div>
+            <div id="galaxy-details" class="details-box"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cosmos & Space Explorer | Your Journey Through the Universe</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
